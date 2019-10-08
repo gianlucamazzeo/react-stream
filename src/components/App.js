@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrowseRouter, Route } from 'react-router-dom'
+import { BrowseRouter, Route, Link } from 'react-router-dom'
 const App = () => {
     return <div>App</div>;
 };
