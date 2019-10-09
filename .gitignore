@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# api google
+/src/components/GoogleAuth.js
+
 # testing
 /coverage
 
