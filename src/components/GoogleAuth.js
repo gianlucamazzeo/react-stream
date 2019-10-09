@@ -1,5 +1,5 @@
 import React from 'react';
-//
+
 class GoogleAuth extends React.Component {
     state = { isSignedIn: null};
 
