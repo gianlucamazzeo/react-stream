@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+
+# Google Auth
 /src/components/GoogleAuth.js
 
 # production
