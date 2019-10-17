@@ -12,3 +12,9 @@ export const signOut = () => {
         type: SIGN_OUT
     };
 };
+
+/*
+export const createStream = formValues => async dispatch => {
+    streams.post('/streams', formValues);
+};
+*/
