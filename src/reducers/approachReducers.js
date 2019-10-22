@@ -1,4 +1,5 @@
     // Array-based approach
+    /*
 const streamReducer = (state=[], action) => {
     switch(action.type) {
         case EDIT_STREAM:
@@ -14,8 +15,11 @@ const streamReducer = (state=[], action) => {
     }
 
 };
+*/
+
 
 // Object-based approach
+/*
 const streamReducer = (state={}, action) => {
     switch(action.type) {
         case EDIT_STREAM:
@@ -40,3 +44,5 @@ const animalSounds = {cat: 'meow', dog: 'bark' };
 const animal = 'lion';
 const sound = 'roar';
 {...animalSounds, [animal]: sound}
+
+*/
