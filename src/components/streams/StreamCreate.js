@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { createStream } from '../../actions';
  
 class StreamCreate extends React.Component {
-    
+
     renderError({error,touched}){
         if(touched && error){
             return (
@@ -15,15 +15,17 @@ class StreamCreate extends React.Component {
         }
     }
     
-    renderInput = ({ input, label, meta }) => {
+    renderInput = ({ input,label, meta }) => {
         const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
-        return (
-        <div className={className}>
+      
+      return (
+            <div className={className}>
             <label>{label}</label>
-         <input {...input} autoComplete="off"/>
-        {this.renderError(meta)}
-        </div>
-       );
+            <input {...input} autoComplete="off" />
+            <div>{this.renderError(meta)}</div>
+            
+            </div>
+        );
     }
 
     onSubmit = formValues => {
@@ -45,7 +47,7 @@ class StreamCreate extends React.Component {
     }
 };
 
-const validate = (formValues) => {
+const validate = formValues => {
     const errors = {};
 
     if(!formValues.title) {
