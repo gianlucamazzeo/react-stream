@@ -10,6 +10,7 @@ import {
         FETCH_STREAM
         
         } from './types';
+import history from '../history';
 
 export const signIn = (userId) => {
     return {
@@ -29,8 +30,7 @@ export const createStream = formValues => async (dispatch,getState) => {
     const response = await streams.post('/streams', {...formValues,userId});
 
     dispatch({ type: CREATE_STREAM,payload: response.data})
-    // Do some programmatic navigation to
-    // get the user back to the root route
+    history.push('/');
 };
 
 
@@ -40,8 +40,9 @@ dispatch({ type: FETCH_STREAMS, payload: response.data });
 
 };
 
-export const fetchStream = (id) => async dispatch => {
-    const response = await  streams.get(`/streams/${id}` );
+export const fetchStream = (id) => async (dispatch,getState) => {
+    const { userId } = getState().auth;
+    const response = await  streams.get(`/streams/${id}`, {userId} );
     dispatch({ type: FETCH_STREAM, payload: response.data })
 }
 
